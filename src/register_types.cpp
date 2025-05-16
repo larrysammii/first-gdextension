@@ -1,4 +1,6 @@
 #include "register_types.h"
+#include "summator.h"
+#include "traffic_light.h"
 #include <gdextension_interface.h>
 #include <godot_cpp/core/class_db.hpp>
 #include <godot_cpp/core/defs.hpp>
@@ -10,7 +12,8 @@ void initialize_gdextension_types(ModuleInitializationLevel p_level) {
 	if (p_level != MODULE_INITIALIZATION_LEVEL_SCENE) {
 		return;
 	}
-	//GDREGISTER_CLASS(YourClass);
+	GDREGISTER_CLASS(Summator);
+	GDREGISTER_CLASS(TrafficLight);
 }
 
 void uninitialize_gdextension_types(ModuleInitializationLevel p_level) {
