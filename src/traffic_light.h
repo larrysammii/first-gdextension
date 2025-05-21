@@ -6,6 +6,7 @@
 #include "godot_cpp/core/binder_common.hpp"
 #include <godot_cpp/classes/control.hpp>
 #include <godot_cpp/classes/texture_rect.hpp>
+#include <godot_cpp/core/gdvirtual.gen.inc>
 
 enum TrafficLightType {
 	TRAFFIC_LIGHT_GO,
@@ -13,6 +14,7 @@ enum TrafficLightType {
 	TRAFFIC_LIGHT_CAUTION,
 };
 
+VARIANT_ENUM_CAST(TrafficLightType);
 class TrafficLight : public godot::Control {
 	GDCLASS(TrafficLight, godot::Control);
 
@@ -41,7 +43,9 @@ public:
 	void set_light_type(TrafficLightType p_type);
 	TrafficLightType get_light_type() const;
 
+	virtual void show_next_light();
+
+	GDVIRTUAL1RC(TrafficLightType, _get_next_light, TrafficLightType);
+
 	TrafficLight();
 };
-
-VARIANT_ENUM_CAST(TrafficLightType);
