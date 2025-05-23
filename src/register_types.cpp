@@ -1,4 +1,5 @@
 #include "register_types.h"
+#include "my_player.h"
 #include "summator.h"
 #include "traffic_light.h"
 #include <gdextension_interface.h>
@@ -14,6 +15,7 @@ void initialize_gdextension_types(ModuleInitializationLevel p_level) {
 	}
 	GDREGISTER_CLASS(Summator);
 	GDREGISTER_CLASS(TrafficLight);
+	GDREGISTER_RUNTIME_CLASS(MyPlayer);
 }
 
 void uninitialize_gdextension_types(ModuleInitializationLevel p_level) {
